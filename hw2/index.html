@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Homework 2</title>
+    </head>
+    <body>
+        <input type="text" name="name" id="name" placeholder="Name" value="Alireza Omidi">
+        <input type="email" name="email" id="email" placeholder="E-mail" value="aomidi@acm.org">
+        <input type="text" name="phone" id="phone" placeholder="Phone Number" value="09135542789">
+        <input type="submit" name="submit" onclick="add_row()">
+
+        <table id="mytable">
+            <thead>
+                <th>Name</th>
+                <th>E-mail</th>
+                <th>Phone Number</th>
+            </thead>
+            <tbody>
+                <!-- Here comes the rows -->
+            </tbody>
+        </table>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            function add_row() {
+                var name = $('#name').val();
+                var email = $('#email').val();
+                var phone = $('#phone').val();
+                if (/09\d{9}/.test(phone) && /\w+@\w+\.\w+/.test(email))
+                    $('#mytable > tbody:last-child').append('<tr><td>' + $('#name').val() + '</td>' + '<td>' + $('#email').val() + '</td>' + '<td>' + $('#phone').val() + '</td>' + '</tr>');
+            }
+        </script>
+    </body>
+</html>
