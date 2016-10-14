@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  if (user)
+    h3 Welcome #{user}
+  else
+    h3
+      | You should
+      a(href='/login') Login
+      | First
